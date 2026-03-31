@@ -1,7 +1,8 @@
-export default function Header({ title }: { title: string }) {
+export default function Header({ title, subtitle }: { title: string; subtitle?: string }) {
   return (
-    <header style={{ background: "#333", color: "white", padding: "2rem", textAlign: "center" }}>
+    <div className="hero">
       <h1>{title}</h1>
-    </header>
+      {subtitle && <p>{subtitle}</p>}
+    </div>
   );
 }

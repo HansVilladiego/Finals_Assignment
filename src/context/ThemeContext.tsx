@@ -15,9 +15,9 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
-      <div className={`theme-${theme}`} style={{ minHeight: "100vh" }}>
-        {children}
-      </div>
+<div className={`theme-${theme}`} style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
+  {children}
+</div>
     </ThemeContext.Provider>
   );
 };

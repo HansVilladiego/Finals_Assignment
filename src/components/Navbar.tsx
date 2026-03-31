@@ -5,34 +5,35 @@ export default function Navbar() {
   return (
     <nav style={{
       display: "flex",
-      gap: "1rem",
-      padding: "1rem",
-      background: "#222",
       alignItems: "center",
-      justifyContent: "space-between"
+      justifyContent: "space-between",
+      padding: "1rem 2rem",
     }}>
-      <div style={{ display: "flex", gap: "1rem" }}>
-        <NavLink
-          to="/"
-          end
-          style={({ isActive }) => ({ color: isActive ? "#f0c040" : "white", textDecoration: "none" })}
-        >
-          Home
-        </NavLink>
-        <NavLink
-          to="/about"
-          style={({ isActive }) => ({ color: isActive ? "#f0c040" : "white", textDecoration: "none" })}
-        >
-          About
-        </NavLink>
-        <NavLink
-          to="/contact"
-          style={({ isActive }) => ({ color: isActive ? "#f0c040" : "white", textDecoration: "none" })}
-        >
-          Contact
-        </NavLink>
+      <div style={{ fontWeight: 800, fontSize: "1.2rem", color: "#f0c040", letterSpacing: "0.05em" }}>
+        &lt;MyPortfolio /&gt;
       </div>
-      <ThemeSwitcher />
+      <div style={{ display: "flex", gap: "1.5rem", alignItems: "center" }}>
+        {["/", "/about", "/contact"].map((path, i) => {
+          const labels = ["Home", "About", "Contact"];
+          return (
+            <NavLink
+              key={path}
+              to={path}
+              end={path === "/"}
+              style={({ isActive }) => ({
+                color: isActive ? "#f0c040" : "#ccc",
+                textDecoration: "none",
+                fontWeight: isActive ? 700 : 400,
+                fontSize: "0.95rem",
+                transition: "color 0.2s",
+              })}
+            >
+              {labels[i]}
+            </NavLink>
+          );
+        })}
+        <ThemeSwitcher />
+      </div>
     </nav>
   );
 }

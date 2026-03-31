@@ -5,8 +5,10 @@ import Footer from "../components/Footer";
 export default function Home() {
   return (
     <>
-      <Header title="Home" />
-      <HeroSection />
+      <Header title="Welcome to My Portfolio React · TypeScript · .NET Core" />
+      <main style={{ flex: 1 }}>
+        <HeroSection />
+      </main>
       <Footer />
     </>
   );

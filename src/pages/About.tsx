@@ -5,8 +5,10 @@ import Footer from "../components/Footer";
 export default function About() {
   return (
     <>
-      <Header title="About Me" />
-      <BioContent />
+      <Header title="About Me A little bit about who I am and what I do" />
+      <main style={{ flex: 1 }}>
+        <BioContent />
+      </main>
       <Footer />
     </>
   );

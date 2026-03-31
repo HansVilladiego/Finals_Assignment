@@ -12,31 +12,30 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} style={{ maxWidth: "500px", margin: "2rem auto", display: "flex", flexDirection: "column", gap: "1rem" }}>
-      <div>
-        <label>Your Name</label>
-        <input
-          {...register("sender", { required: "Name is required" })}
-          placeholder="Enter your name"
-          style={{ display: "block", width: "100%", padding: "0.5rem", marginTop: "0.25rem" }}
-        />
-        {errors.sender && <p style={{ color: "red" }}>{errors.sender.message}</p>}
-      </div>
+    <div className="card">
+      <h2 style={{ fontSize: "1.6rem", marginBottom: "1.5rem" }}>Send Me a Message</h2>
+      <form onSubmit={handleSubmit(onSubmit)} style={{ display: "flex", flexDirection: "column", gap: "1.2rem" }}>
+        <div>
+          <label>Your Name</label>
+          <input
+            {...register("sender", { required: "Name is required" })}
+            placeholder="e.g. Juan Dela Cruz"
+          />
+          {errors.sender && <p style={{ color: "#e74c3c", fontSize: "0.85rem", marginTop: "0.3rem" }}>{errors.sender.message}</p>}
+        </div>
 
-      <div>
-        <label>Message</label>
-        <textarea
-          {...register("message", { required: "Message is required" })}
-          placeholder="Write your message..."
-          rows={4}
-          style={{ display: "block", width: "100%", padding: "0.5rem", marginTop: "0.25rem" }}
-        />
-        {errors.message && <p style={{ color: "red" }}>{errors.message.message}</p>}
-      </div>
+        <div>
+          <label>Message</label>
+          <textarea
+            {...register("message", { required: "Message is required" })}
+            placeholder="Write your message here..."
+            rows={5}
+          />
+          {errors.message && <p style={{ color: "#e74c3c", fontSize: "0.85rem", marginTop: "0.3rem" }}>{errors.message.message}</p>}
+        </div>
 
-      <button type="submit" style={{ padding: "0.75rem", background: "#222", color: "white", cursor: "pointer" }}>
-        Send Message
-      </button>
-    </form>
+        <button type="submit">Send Message 🚀</button>
+      </form>
+    </div>
   );
 }

@@ -5,8 +5,10 @@ import Footer from "../components/Footer";
 export default function Contact() {
   return (
     <>
-      <Header title="Contact Me" />
-      <ContactForm />
+      <Header title="Contact Me" subtitle="Have a question or just want to say hi? 👋" />
+      <main style={{ flex: 1 }}>
+        <ContactForm />
+      </main>
       <Footer />
     </>
   );
